@@ -163,13 +163,19 @@ body {
   width: 100%;
 }
 
+/* ===== Section Layout + Navbar Scroll Fix (KEEP ONLY THIS ONE) ===== */
 section {
   min-height: 100vh;
   padding: var(--section-padding);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Fix: navbar covering headings when clicking nav */
+  scroll-margin-top: 120px;
 }
+
 
 .container {
   max-width: 1200px;
