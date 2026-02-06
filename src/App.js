@@ -1,42 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+
 import './App.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
-  // Navbar background on scroll
+  /* Navbar background on scroll */
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Active nav underline follows scroll (IntersectionObserver)
+  /* Active section detection (FIXED) */
   useEffect(() => {
     const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
-
-        if (visible?.target?.id) {
-          setActiveSection(visible.target.id);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
       },
       {
-        threshold: [0.2, 0.4, 0.6],
-        rootMargin: '-20% 0px -55% 0px'
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: 0
       }
     );
 
@@ -48,18 +50,27 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  // Scroll with offset so navbar doesn't cover section title
+  /* Scroll with navbar offset */
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (!element) return;
 
-    const yOffset = 110; // navbar offset
-    const y = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    const yOffset = 110;
+    const y =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth'
+    });
   };
 
   return (
     <div className="App">
+
+      {/* Background Effects */}
       <div className="animated-bg">
         <div className="grid-overlay"></div>
         <div className="glow-orb glow-1"></div>
@@ -67,6 +78,7 @@ function App() {
         <div className="glow-orb glow-3"></div>
       </div>
 
+      {/* Navbar */}
       <motion.nav
         className={`navbar ${scrolled ? 'scrolled' : ''}`}
         initial={{ y: -100 }}
@@ -74,6 +86,7 @@ function App() {
         transition={{ duration: 0.5 }}
       >
         <div className="nav-container">
+
           <motion.div
             className="logo"
             whileHover={{ scale: 1.05 }}
@@ -106,10 +119,13 @@ function App() {
               </motion.li>
             ))}
           </ul>
+
         </div>
       </motion.nav>
 
+      {/* Main Sections */}
       <main>
+
         <section id="home">
           <Hero />
         </section>
@@ -129,13 +145,17 @@ function App() {
         <section id="contact">
           <Contact />
         </section>
+
       </main>
 
+      {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
+
           <p>&copy; 2026 Vedant Patel. Built with React & passion.</p>
 
           <div className="footer-links">
+
             <a
               href="https://github.com/vedantpatel1234-sd"
               target="_blank"
@@ -152,10 +172,15 @@ function App() {
               LinkedIn
             </a>
 
-            <a href="mailto:pvedu2006@gmail.com">Email</a>
+            <a href="mailto:pvedu2006@gmail.com">
+              Email
+            </a>
+
           </div>
+
         </div>
       </footer>
+
     </div>
   );
 }
