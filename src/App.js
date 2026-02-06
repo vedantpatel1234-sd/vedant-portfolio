@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import Hero from './components/Hero';
@@ -13,63 +13,82 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
-  /* Navbar background on scroll */
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+  // Keep this consistent with your scroll offset + CSS scroll-margin-top
+  const NAV_OFFSET = 110;
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  /* Active section detection (FIXED) */
-  useEffect(() => {
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-40% 0px -50% 0px',
-        threshold: 0
-      }
-    );
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  // Prevent excessive state updates
+  const tickingRef = useRef(false);
 
   /* Scroll with navbar offset */
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (!element) return;
 
-    const yOffset = 110;
     const y =
       element.getBoundingClientRect().top +
       window.pageYOffset -
-      yOffset;
+      NAV_OFFSET;
 
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: y, behavior: 'smooth' });
   };
+
+  /* Detect active section by closest section top to NAV_OFFSET */
+  useEffect(() => {
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
+
+    const getCurrentSection = () => {
+      const positions = sectionIds
+        .map((id) => {
+          const el = document.getElementById(id);
+          if (!el) return null;
+
+          const rect = el.getBoundingClientRect();
+          // Distance from where we want the section to "sit" (below navbar)
+          const distance = Math.abs(rect.top - NAV_OFFSET);
+
+          return { id, distance, top: rect.top };
+        })
+        .filter(Boolean);
+
+      // Pick the section whose top is closest to NAV_OFFSET
+      positions.sort((a, b) => a.distance - b.distance);
+
+      // Edge case: if user is at very top, force home
+      if (window.scrollY < 50) return 'home';
+
+      return positions[0]?.id || 'home';
+    };
+
+    const onScroll = () => {
+      // Navbar background
+      setScrolled(window.scrollY > 50);
+
+      // Active section (throttled to animation frame)
+      if (!tickingRef.current) {
+        tickingRef.current = true;
+
+        window.requestAnimationFrame(() => {
+          const current = getCurrentSection();
+          setActiveSection((prev) => (prev === current ? prev : current));
+          tickingRef.current = false;
+        });
+      }
+    };
+
+    // Run once on load (important for refresh mid-page on Vercel)
+    onScroll();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
 
   return (
     <div className="App">
-
       {/* Background Effects */}
       <div className="animated-bg">
         <div className="grid-overlay"></div>
@@ -86,7 +105,6 @@ function App() {
         transition={{ duration: 0.5 }}
       >
         <div className="nav-container">
-
           <motion.div
             className="logo"
             whileHover={{ scale: 1.05 }}
@@ -119,13 +137,11 @@ function App() {
               </motion.li>
             ))}
           </ul>
-
         </div>
       </motion.nav>
 
       {/* Main Sections */}
       <main>
-
         <section id="home">
           <Hero />
         </section>
@@ -145,17 +161,14 @@ function App() {
         <section id="contact">
           <Contact />
         </section>
-
       </main>
 
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-
           <p>&copy; 2026 Vedant Patel. Built with React & passion.</p>
 
           <div className="footer-links">
-
             <a
               href="https://github.com/vedantpatel1234-sd"
               target="_blank"
@@ -172,15 +185,10 @@ function App() {
               LinkedIn
             </a>
 
-            <a href="mailto:pvedu2006@gmail.com">
-              Email
-            </a>
-
+            <a href="mailto:pvedu2006@gmail.com">Email</a>
           </div>
-
         </div>
       </footer>
-
     </div>
   );
 }
