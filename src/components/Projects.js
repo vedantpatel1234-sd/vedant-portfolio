@@ -6,51 +6,47 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Student Management System',
-      description: 'Built a full-stack web application for managing student records with role-based authentication and real-time updates. Implemented CRUD operations and designed a responsive admin dashboard.',
-      impact: 'Reduced data entry time by 40% and improved user experience with intuitive UI/UX design.',
-      role: 'Solo Developer',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Express'],
+      title: 'CourseSync',
+      imageLabel: 'CourseSync',
+      subtitle: 'Instructor-Course Assignment System',
+      description: 'A full-stack multi-tenant SaaS platform for academic departments to manage instructor-to-section assignments, replacing spreadsheet-based workflows. Integrated Claude API as a natural language AI assistant allowing admins to query assignments conversationally.',
+      impact: 'Designed automated matching engine using the Hungarian algorithm to generate optimized assignment drafts, reducing manual admin time.',
+      role: 'Full Stack Developer',
+      tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Claude API', 'Recharts'],
       category: 'Full Stack',
-      github: 'https://github.com/yourusername/student-management',
-      live: '#'
+      github: 'https://github.com/vedantpatel1234-sd/coursesync',
+      live: ''
     },
     {
-      title: 'Task Tracker Application',
-      description: 'Developed a productivity tool with drag-and-drop task management, priority tagging, and deadline notifications. Integrated localStorage for data persistence.',
-      impact: 'Helped users organize 100+ tasks with visual Kanban board and automated reminders.',
-      role: 'Frontend Developer',
-      tech: ['React', 'JavaScript', 'CSS3', 'Local Storage'],
+      title: 'Grind Log',
+      imageLabel: 'Grind Log',
+      subtitle: 'Fitness Tracking App',
+      description: 'A full-stack fitness and nutrition tracker built in a 3-person team. Integrated ExerciseDB and Open Food Facts APIs for exercise lookup and macro tracking, with interactive Recharts visualizations for user progress.',
+      impact: 'Implemented Supabase Auth with protected routes and real-time data sync across the application.',
+      role: 'Team Developer',
+      tech: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Recharts', 'ExerciseDB API'],
+      category: 'Full Stack',
+      github: 'https://github.com/vedantpatel1234-sd/grind-log',
+      live: ''
+    },
+    {
+      title: 'Portfolio',
+      imageLabel: 'Portfolio',
+      subtitle: 'Cyberpunk-themed Portfolio Website',
+      description: 'Designed and built a cyberpunk-themed portfolio with custom animations and a cohesive visual identity showcasing projects and technical skills.',
+      impact: 'Built with React, Framer Motion animations, and a fully responsive design for all screen sizes.',
+      role: 'Solo Developer',
+      tech: ['React', 'JavaScript', 'CSS3', 'Framer Motion'],
       category: 'Frontend',
-      github: 'https://github.com/yourusername/task-tracker',
-      live: '#'
-    },
-    {
-      title: 'Weather API Integration',
-      description: 'Created a weather dashboard consuming OpenWeather API with location-based forecasts, interactive charts, and responsive mobile design.',
-      impact: 'Delivered real-time weather data for 50+ cities with 95% uptime and fast load times.',
-      role: 'Solo Developer',
-      tech: ['JavaScript', 'React', 'OpenWeather API', 'Chart.js'],
-      category: 'Full Stack',
-      github: 'https://github.com/yourusername/weather-app',
-      live: '#'
-    },
-    {
-      title: 'Database Design Project',
-      description: 'Designed and implemented a normalized PostgreSQL database schema for an e-commerce platform with complex queries, triggers, and stored procedures.',
-      impact: 'Optimized query performance by 60% through indexing and efficient schema design.',
-      role: 'Backend Developer',
-      tech: ['PostgreSQL', 'SQL', 'Database Design', 'Python'],
-      category: 'Backend',
-      github: 'https://github.com/yourusername/db-project',
-      live: '#'
+      github: 'https://github.com/vedantpatel1234-sd',
+      live: ''
     }
   ];
 
   const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
 
-  const filteredProjects = filter === 'All' 
-    ? projects 
+  const filteredProjects = filter === 'All'
+    ? projects
     : projects.filter(project => project.category === filter);
 
   return (
@@ -63,7 +59,6 @@ const Projects = () => {
       >
         <h2 className="section-title">Featured Projects</h2>
 
-        {/* Filter Buttons */}
         <div className="project-filters">
           {categories.map((category) => (
             <motion.button
@@ -90,36 +85,37 @@ const Projects = () => {
               layout
             >
               <div className="project-image">
-                {project.title}
+                {project.imageLabel}
               </div>
 
               <div className="project-content">
                 <div className="project-header">
-                  <h3>{project.title}</h3>
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', opacity: 0.7, marginTop: '2px' }}>{project.subtitle}</p>
+                  </div>
                   <span className="project-role">{project.role}</span>
                 </div>
-                
+
                 <p className="project-description">{project.description}</p>
-                
+
                 <p className="project-impact">
                   <strong>Impact:</strong> {project.impact}
                 </p>
 
                 <div className="project-tech">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="tech-tag">
-                      {tech}
-                    </span>
+                    <span key={tech} className="tech-tag">{tech}</span>
                   ))}
                 </div>
 
                 <div className="project-links">
-                  {project.github !== '#' && (
+                  {project.github && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       GitHub →
                     </a>
                   )}
-                  {project.live !== '#' && (
+                  {project.live && (
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
                       Live Demo →
                     </a>

@@ -4,20 +4,24 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Frontend Development',
-      skills: ['JavaScript', 'React', 'React Native', 'HTML5', 'CSS3', 'Figma']
+      title: 'Languages',
+      skills: ['JavaScript', 'Python', 'C#', 'SQL (PostgreSQL)', 'HTML', 'CSS']
     },
     {
-      title: 'Backend Development',
-      skills: ['Node.js', 'Python', 'C#', 'PostgreSQL', '.NET']
+      title: 'Frameworks & Libraries',
+      skills: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'React Native', 'Framer Motion', 'Recharts']
     },
     {
-      title: 'Tools & Technologies',
-      skills: ['Git', 'VS Code', 'GitHub', 'REST APIs', 'Responsive Design']
+      title: 'Databases & Cloud',
+      skills: ['PostgreSQL', 'Supabase', 'MySQL', 'Vercel', 'Render']
+    },
+    {
+      title: 'Tools & AI',
+      skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Claude API', 'Groq API', 'REST APIs']
     },
     {
       title: 'Soft Skills',
-      skills: ['Teamwork', 'Problem Solving', 'Deadline Oriented', 'Communication', 'Reliability']
+      skills: ['Teamwork', 'Problem Solving', 'Deadline Oriented', 'Communication', 'Reliability', 'Agile / SDLC']
     }
   ];
 

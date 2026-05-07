@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Hero from './components/Hero';
 import About from './components/About';
+import Education from './components/Education';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -12,14 +14,12 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Navbar background on scroll
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Section observer for active menu highlight
     const sections = document.querySelectorAll('section');
 
     const observer = new IntersectionObserver(
@@ -32,7 +32,6 @@ function App() {
       },
       {
         root: null,
-        // middle-of-screen detection (prevents wrong active link)
         rootMargin: '-50% 0px -50% 0px',
         threshold: 0,
       }
@@ -50,18 +49,21 @@ function App() {
     const element = document.getElementById(sectionId);
     if (!element) return;
 
-    // update active immediately on click
     setActiveSection(sectionId);
 
-    // IMPORTANT: offset because navbar is fixed
-    const NAV_OFFSET = 120;
+    const NAV_OFFSET = 80;
     const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
     const scrollTo = elementTop - NAV_OFFSET;
 
     window.scrollTo({ top: scrollTo, behavior: 'smooth' });
-
-    // also update hash in URL (optional)
     window.history.replaceState(null, '', `#${sectionId}`);
+  };
+
+  // min-height: 100vh ensures the next section never peeks in at the bottom
+  const sectionStyle = {
+    minHeight: '100vh',
+    padding: '20px 20px 100px',
+    scrollMarginTop: '80px',
   };
 
   return (
@@ -90,7 +92,7 @@ function App() {
           </motion.div>
 
           <ul className="nav-links">
-            {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
+            {['home', 'about', 'education', 'experience', 'skills', 'projects', 'contact'].map((item, index) => (
               <motion.li
                 key={item}
                 initial={{ opacity: 0, y: -20 }}
@@ -114,23 +116,31 @@ function App() {
       </motion.nav>
 
       <main>
-        <section id="home">
+        <section id="home" style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 20px' }}>
           <Hero />
         </section>
 
-        <section id="about">
+        <section id="about" style={sectionStyle}>
           <About />
         </section>
 
-        <section id="skills">
+        <section id="education" style={sectionStyle}>
+          <Education />
+        </section>
+
+        <section id="experience" style={sectionStyle}>
+          <Experience />
+        </section>
+
+        <section id="skills" style={sectionStyle}>
           <Skills />
         </section>
 
-        <section id="projects">
+        <section id="projects" style={sectionStyle}>
           <Projects />
         </section>
 
-        <section id="contact">
+        <section id="contact" style={sectionStyle}>
           <Contact />
         </section>
       </main>
@@ -139,18 +149,10 @@ function App() {
         <div className="footer-content">
           <p>&copy; 2026 Vedant Patel. Built with React & passion.</p>
           <div className="footer-links">
-            <a
-              href="https://github.com/vedantpatel1234-sd"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/vedantpatel1234-sd" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a
-              href="https://www.linkedin.com/in/vedant-patel-aa2729325"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/vedant-patel-aa2729325" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
             <a href="mailto:pvedu2006@gmail.com">Email</a>

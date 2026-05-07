@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="about container">
       <motion.div
@@ -28,13 +30,14 @@ const About = () => {
             </p>
             <p>
               My journey in software development started with a curiosity about how things work
-              behind the scenes. Now, I'm building that foundation with modern technologies including
-              JavaScript, Python, C#, PostgreSQL, and React.
+              behind the scenes. I've built that foundation with modern technologies including
+              JavaScript, Python, C#, PostgreSQL, React, Next.js, and Supabase — and I've applied
+              Agile methodologies through multiple real-world team projects.
             </p>
             <p>
               I'm particularly passionate about creating <strong>intuitive user interfaces</strong> and
-              building applications that solve real-world problems. I love the challenge of turning
-              complex ideas into clean, functional code.
+              building applications that solve real-world problems — from AI-powered SaaS platforms
+              to fitness trackers. I love turning complex ideas into clean, functional code.
             </p>
             <p>
               <strong>Location:</strong> Calgary, Alberta, Canada 🇨🇦
@@ -48,7 +51,30 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <img src="/profile.jpg" alt="Vedant Patel" className="profile-image" />
+            {!imgError ? (
+              <img
+                src="/profile.jpg"
+                alt="Vedant Patel"
+                className="profile-image"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div
+                className="profile-image"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'var(--bg-card)',
+                  fontSize: '4rem',
+                  gap: '10px'
+                }}
+              >
+                <span>👨‍💻</span>
+                <span style={{ fontSize: '1rem', color: 'var(--text-light)' }}>Vedant Patel</span>
+              </div>
+            )}
           </motion.div>
         </div>
       </motion.div>
