@@ -48,8 +48,8 @@ const Contact = () => {
 
         <div className="contact-intro">
           <p>
-            I'm actively seeking internship and co-op opportunities in software development.
-            Let's connect and discuss how I can contribute to your team!
+            I'm actively seeking <strong style={{ color: 'var(--primary-color)' }}>full-time Software Developer roles</strong> as well as <strong style={{ color: 'var(--primary-color)' }}>co-op and internship opportunities</strong>. 
+            I'm always open to connecting with developers, engineering teams, recruiters, and hiring managers working in software and web development. Let's talk!
           </p>
         </div>
 
@@ -134,29 +134,15 @@ const Contact = () => {
         >
           <p style={{ marginBottom: '15px', fontWeight: 'bold' }}>Reach me directly:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
-            <a
-              href="mailto:pvedu2006@gmail.com"
-              style={{ color: 'var(--primary-color)', textDecoration: 'none' }}
-            >
+            <a href="mailto:pvedu2006@gmail.com" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>
               📧 pvedu2006@gmail.com
             </a>
-
-            <a
-              href="tel:+13683990093"
-              style={{ color: 'var(--primary-color)', textDecoration: 'none' }}
-            >
-              📱 +1 (368) 399-0093
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/vedant-patel-aa2729325"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'var(--primary-color)', textDecoration: 'none' }}
-            >
+            <a href="https://www.linkedin.com/in/vedant-patel-aa2729325" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>
               💼 LinkedIn Profile
             </a>
-
+            <a href="https://github.com/vedantpatel1234-sd" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>
+              🐙 GitHub
+            </a>
             <p style={{ color: 'var(--text-light)' }}>
               📍 Calgary, Alberta, Canada
             </p>

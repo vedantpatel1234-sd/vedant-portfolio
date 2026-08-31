@@ -16,7 +16,7 @@ const Projects = () => {
       ],
       role: 'Frontend Developer',
       tech: ['React', 'JavaScript', 'Power BI Embedded', 'Recharts', 'Microsoft Entra ID', 'MSAL.js', 'Azure Functions', 'GitHub Actions'],
-      category: 'Full Stack',
+      category: 'Frontend',
       date: 'May 2026 – Aug. 2026',
       github: '',
       live: ''
@@ -45,7 +45,7 @@ const Projects = () => {
       bullets: [
         'Set up a CI/CD pipeline connected to Git and GitHub for automatic redeployment on every push, keeping the live site always up to date.',
       ],
-      role: 'Solo Developer',
+      role: 'Frontend Developer — Solo',
       tech: ['React.js', 'JavaScript', 'CSS3', 'Framer Motion', 'Git', 'Vercel'],
       category: 'Frontend',
       date: 'Sep. 2025 – Present',
@@ -54,7 +54,9 @@ const Projects = () => {
     }
   ];
 
-  const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
+  // All shows everything, Full Stack shows CourseSync only,
+  // Frontend shows GBTAC + Portfolio
+  const categories = ['All', 'Full Stack', 'Frontend'];
 
   const filteredProjects = filter === 'All'
     ? projects

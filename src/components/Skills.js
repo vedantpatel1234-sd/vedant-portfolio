@@ -9,7 +9,7 @@ const Skills = () => {
     },
     {
       title: 'Frameworks & Libraries',
-      skills: ['React 18', 'Next.js', 'Node.js', 'Tailwind CSS', 'Framer Motion', 'React Native', '.NET', 'Blazor', 'Zustand', 'React Router']
+      skills: ['React 18', 'Next.js', 'Node.js', 'Tailwind CSS', 'Framer Motion', 'React Native', '.NET', 'Blazor', 'Zustand', 'React Router', 'Recharts']
     },
     {
       title: 'Databases',

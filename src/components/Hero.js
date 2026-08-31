@@ -14,7 +14,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            style={{ fontSize: '1.2rem', color: 'var(--primary-color)', marginBottom: '20px' }}
+            style={{ fontSize: '1.2rem', color: 'var(--primary-color)', marginBottom: '8px' }}
           >
             Hi, my name is
           </motion.p>
@@ -23,6 +23,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
+            style={{ marginBottom: '16px' }}
           >
             Vedant Patel
           </motion.h1>
@@ -31,6 +32,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
+            style={{ marginBottom: '16px' }}
           >
             Full-Stack Developer | <span className="highlight">React • TypeScript • PostgreSQL</span> | Building AI-Integrated SaaS Applications
           </motion.h2>
@@ -42,7 +44,7 @@ const Hero = () => {
           >
             Software Development graduate from <span className="highlight">SAIT</span> with hands-on experience building
             full-stack web applications end-to-end — from database design and backend logic to
-            responsive, polished front-ends using <span className="highlight">React, TypeScript, PostgreSQL</span> and <span className="highlight">AI integrations</span>.
+            responsive frontends using <span className="highlight">React, TypeScript, PostgreSQL</span> and <span className="highlight">AI integrations</span>.
           </motion.p>
 
           <motion.div
