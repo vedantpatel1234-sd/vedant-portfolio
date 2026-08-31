@@ -6,24 +6,51 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'GBTAC',
+      imageLabel: 'GBTAC',
+      subtitle: 'Energy Visualization Platform — Capstone Project',
+      description: 'Developed the React front-end for a full-stack energy monitoring platform for a net-zero greenhouse research facility, visualizing 130,000+ sensor data rows across energy, solar, and weather datasets.',
+      bullets: [
+        'Built responsive dashboard pages and KPI visualizations using Power BI Embedded and Recharts, with front-end authentication and role-based access via Microsoft Entra ID and MSAL.js across 4 user roles.',
+        'Integrated React components with 18–20 Azure Functions APIs, collaborating in a 3-person Agile team using Jira and GitHub Actions CI/CD.',
+      ],
+      role: 'Frontend Developer',
+      tech: ['React', 'JavaScript', 'Power BI Embedded', 'Recharts', 'Microsoft Entra ID', 'MSAL.js', 'Azure Functions', 'GitHub Actions'],
+      category: 'Full Stack',
+      date: 'May 2026 – Aug. 2026',
+      github: '',
+      live: ''
+    },
+    {
       title: 'CourseSync',
       imageLabel: 'CourseSync',
       subtitle: 'Instructor-Course Assignment System',
-      description: 'A full-stack multi-tenant SaaS platform for academic departments to manage instructor-to-section assignments, replacing spreadsheet-based workflows. Integrated Claude API as a natural language AI assistant allowing admins to query assignments conversationally.',
-      impact: 'Designed automated matching engine using the Hungarian algorithm to generate optimized assignment drafts, reducing manual admin time.',
+      description: 'Built a full-stack web application end-to-end for academic departments to manage instructor-to-section assignments, featuring role-based dashboards for Admins, Instructors, and Coordinators.',
+      bullets: [
+        'Built a weighted scoring engine that processes structured data across multiple constraints to generate reliable, data-driven recommendations.',
+        'Integrated the Anthropic Claude API to add an AI-powered scheduling assistant, and shipped through a CI/CD pipeline with automatic deployment on every push.',
+      ],
       role: 'Full Stack Developer',
-      tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Claude API', 'Recharts'],
+      tech: ['React 18', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Claude API', 'Recharts', 'Vercel'],
       category: 'Full Stack',
+      date: 'May 2026 – Present',
+      github: '',
+      live: ''
     },
     {
       title: 'Portfolio',
       imageLabel: 'Portfolio',
-      subtitle: 'Cyberpunk-themed Portfolio Website',
-      description: 'Designed and built a cyberpunk-themed portfolio with custom animations and a cohesive visual identity showcasing projects and technical skills.',
-      impact: 'Built with React, Framer Motion animations, and a fully responsive design for all screen sizes.',
+      subtitle: 'Personal Portfolio Website',
+      description: 'Designed and built a fast, visually polished public portfolio website end-to-end using React and JavaScript, accurately translating a custom creative direction into clean, well-structured code.',
+      bullets: [
+        'Set up a CI/CD pipeline connected to Git and GitHub for automatic redeployment on every push, keeping the live site always up to date.',
+      ],
       role: 'Solo Developer',
-      tech: ['React', 'JavaScript', 'CSS3', 'Framer Motion'],
+      tech: ['React.js', 'JavaScript', 'CSS3', 'Framer Motion', 'Git', 'Vercel'],
       category: 'Frontend',
+      date: 'Sep. 2025 – Present',
+      github: 'https://github.com/vedantpatel1234-sd/vedant-portfolio',
+      live: 'https://vedant-portfolio-five-sigma.vercel.app'
     }
   ];
 
@@ -81,16 +108,36 @@ const Projects = () => {
                   <span className="project-role">{project.role}</span>
                 </div>
 
+                <p style={{ fontSize: '0.8rem', color: 'var(--accent-color)', marginBottom: '10px' }}>{project.date}</p>
+
                 <p className="project-description">{project.description}</p>
 
-                <p className="project-impact">
-                  <strong>Impact:</strong> {project.impact}
-                </p>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '15px' }}>
+                  {project.bullets.map((b, i) => (
+                    <li key={i} style={{ position: 'relative', paddingLeft: '18px', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.5' }}>
+                      <span style={{ position: 'absolute', left: 0, color: 'var(--primary-color)' }}>▹</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
 
                 <div className="project-tech">
                   {project.tech.map((tech) => (
                     <span key={tech} className="tech-tag">{tech}</span>
                   ))}
+                </div>
+
+                <div className="project-links">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      GitHub →
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      Live Demo →
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

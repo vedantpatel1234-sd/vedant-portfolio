@@ -32,7 +32,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            Full-Stack Developer building <span className="highlight">real-world web & AI-powered apps</span>.
+            Full-Stack Developer | <span className="highlight">React • TypeScript • PostgreSQL</span> | Building AI-Integrated SaaS Applications
           </motion.h2>
 
           <motion.p
@@ -40,9 +40,9 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            I build full-stack applications using <span className="highlight">React, Next.js, Node.js, Python, C#</span> and
-            <span className="highlight"> PostgreSQL / Supabase</span>. Currently pursuing my Software Development Diploma
-            at SAIT, with a focus on intuitive user experiences, robust backend systems, and AI integrations.
+            Software Development graduate from <span className="highlight">SAIT</span> with hands-on experience building
+            full-stack web applications end-to-end — from database design and backend logic to
+            responsive, polished front-ends using <span className="highlight">React, TypeScript, PostgreSQL</span> and <span className="highlight">AI integrations</span>.
           </motion.p>
 
           <motion.div

@@ -23,6 +23,7 @@ const Education = () => {
             <div>
               <h4 className="exp-title">Southern Alberta Institute of Technology (SAIT)</h4>
               <p className="exp-sub">Diploma — Software Development</p>
+              <p style={{ color: 'var(--primary-color)', fontSize: '0.9rem', marginTop: '4px' }}>GPA: 3.63 / 4.0</p>
             </div>
             <div style={{ textAlign: 'right', flexShrink: 0 }}>
               <p className="exp-date">Jan. 2025 – Aug. 2026</p>
@@ -32,8 +33,9 @@ const Education = () => {
           <ul className="exp-bullets">
             {[
               'Coursework includes: Object-Oriented Programming, Database Design, Web Development, Mobile App Development, Software Testing, Cloud Computing, UI/UX Design, and System Analysis & Design.',
-              'Built full-stack web and mobile applications using React, Node.js, C#, Python, SQL, and REST APIs across multiple academic projects.',
-              'Used Git and SDLC practices in team-based projects from planning through deployment and testing.',
+              'Built full-stack web and mobile applications using React, TypeScript, Node.js, C#, Python, SQL, and REST APIs across multiple academic and capstone projects.',
+              'Applied Agile/Scrum methodologies and SDLC principles through team-based projects from requirements gathering through deployment and testing.',
+              'Graduated with a GPA of 3.63/4.0.',
             ].map((b, i) => (
               <motion.li
                 key={i}

@@ -9,8 +9,7 @@ const Experience = () => {
       location: 'Calgary, AB',
       date: 'Nov. 2025 – Present',
       bullets: [
-        'Pick, pack, and fulfill online customer orders accurately and within tight SLA windows in a high-volume omnichannel retail environment.',
-        'Collaborate with fulfillment team to maintain order accuracy and meet daily throughput targets across in-store and curbside pickup channels.',
+        'Pick, pack, and fulfill 150+ online customer orders daily with high accuracy under tight deadlines in a high-volume omnichannel environment.',
       ]
     },
     {
@@ -19,8 +18,7 @@ const Experience = () => {
       location: 'Calgary, AB',
       date: 'Feb. 2025 – Dec. 2025',
       bullets: [
-        'Delivered consistent customer service in a high-volume retail environment, handling transactions accurately under time pressure.',
-        'Collaborated with team members to maintain store operations and meet daily targets across an 11-month tenure.',
+        'Handled customer transactions and store operations reliably in a fast-paced retail setting.',
       ]
     }
   ];

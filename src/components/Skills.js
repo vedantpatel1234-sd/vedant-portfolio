@@ -5,23 +5,27 @@ const Skills = () => {
   const skillCategories = [
     {
       title: 'Languages',
-      skills: ['JavaScript', 'Python', 'C#', 'SQL (PostgreSQL)', 'HTML', 'CSS']
+      skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C#', 'SQL', 'C++', 'C', 'HTML', 'CSS']
     },
     {
       title: 'Frameworks & Libraries',
-      skills: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'React Native', 'Framer Motion', 'Recharts']
+      skills: ['React 18', 'Next.js', 'Node.js', 'Tailwind CSS', 'Framer Motion', 'React Native', '.NET', 'Blazor', 'Zustand', 'React Router']
     },
     {
-      title: 'Databases & Cloud',
-      skills: ['PostgreSQL', 'Supabase', 'MySQL', 'Vercel', 'Render']
+      title: 'Databases',
+      skills: ['PostgreSQL', 'Oracle SQL / APEX', 'MySQL', 'Supabase', 'SQL Query Optimization']
     },
     {
-      title: 'Tools & AI',
-      skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Claude API', 'Groq API', 'REST APIs']
+      title: 'Cloud & DevOps',
+      skills: ['Git', 'GitHub', 'GitHub Actions (CI/CD)', 'Docker', 'Azure', 'Azure Functions', 'Azure SQL', 'Vercel', 'PowerShell']
     },
     {
-      title: 'Soft Skills',
-      skills: ['Teamwork', 'Problem Solving', 'Deadline Oriented', 'Communication', 'Reliability', 'Agile / SDLC']
+      title: 'APIs & AI',
+      skills: ['RESTful APIs', 'Microsoft Entra ID', 'MSAL.js', 'Anthropic Claude API', 'Power BI Embedded', 'AI Service Integration']
+    },
+    {
+      title: 'Tools & Methodology',
+      skills: ['VS Code', 'Figma', 'Jira', 'Power BI', 'Agile/Scrum', 'SDLC', 'OOP', 'Unit & Integration Testing', 'Secure Coding']
     }
   ];
 

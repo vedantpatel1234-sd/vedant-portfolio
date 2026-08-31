@@ -24,20 +24,20 @@ const About = () => {
           >
             <h3>Hello! I'm Vedant.</h3>
             <p>
-              I'm currently pursuing my Software Development Diploma at{' '}
-              <span className="highlight">SAIT (Southern Alberta Institute of Technology)</span>,
-              with an expected graduation in August 2026.
+              I'm happiest when an idea turns into something I can actually open in a browser and use.
             </p>
             <p>
-              My journey in software development started with a curiosity about how things work
-              behind the scenes. I've built that foundation with modern technologies including
-              JavaScript, Python, C#, PostgreSQL, React, Next.js, and Supabase — and I've applied
-              Agile methodologies through multiple real-world team projects.
+              I'm a <span className="highlight">Software Development graduate from SAIT</span> focused on full-stack web application
+              development, with hands-on experience across React, TypeScript, JavaScript, PostgreSQL,
+              REST APIs, and CI/CD. I enjoy working across the stack — from building responsive
+              frontends to designing databases, developing application logic, integrating APIs, and
+              deploying applications.
             </p>
             <p>
-              I'm particularly passionate about creating <strong>intuitive user interfaces</strong> and
-              building applications that solve real-world problems — from AI-powered SaaS platforms
-              to fitness trackers. I love turning complex ideas into clean, functional code.
+              I'm particularly passionate about building <strong>useful, well-designed web applications</strong> that
+              solve real problems — from AI-integrated SaaS platforms to energy visualization dashboards.
+              I use AI-assisted development tools as part of my normal workflow and love turning complex
+              ideas into clean, functional code.
             </p>
             <p>
               <strong>Location:</strong> Calgary, Alberta, Canada 🇨🇦
