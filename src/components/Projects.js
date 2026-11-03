@@ -18,8 +18,8 @@ const Projects = () => {
       tech: ['React', 'JavaScript', 'Power BI Embedded', 'Recharts', 'Microsoft Entra ID', 'MSAL.js', 'Azure Functions', 'GitHub Actions'],
       category: 'Frontend',
       date: 'May 2026 – Aug. 2026',
-      github: '',
-      live: ''
+      github: 'https://github.com/Akash-2911/gbtac-visualization',
+      live: 'https://akash-2911.github.io/GBATC_Live/'
     },
     {
       title: 'CourseSync',
