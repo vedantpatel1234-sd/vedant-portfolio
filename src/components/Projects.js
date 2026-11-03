@@ -24,17 +24,19 @@ const Projects = () => {
     {
       title: 'CourseSync',
       imageLabel: 'CourseSync',
-      subtitle: 'Instructor-Course Assignment System',
-      description: 'Built a full-stack web application end-to-end for academic departments to manage instructor-to-section assignments, featuring role-based dashboards for Admins, Instructors, and Coordinators.',
+      subtitle: 'Multi-Tenant Academic Scheduling SaaS',
+      description: 'A multi-tenant web application that helps colleges assign instructors to course sections, with separate portals for administrators, coordinators, and instructors.',
       bullets: [
-        'Built a weighted scoring engine that processes structured data across multiple constraints to generate reliable, data-driven recommendations.',
-        'Integrated the Anthropic Claude API to add an AI-powered scheduling assistant, and shipped through a CI/CD pipeline with automatic deployment on every push.',
+        'Built a multi-tenant instructor-assignment SaaS in React 19, TypeScript and Supabase with three role-based portals and a weighted matching engine that scores candidates and excludes conflicts.',
+        'Enforced tenant isolation with PostgreSQL row-level security on 15 tables, verified by database tests within a 913-test suite (Vitest, PGlite) run in GitHub Actions CI.',
+        'Integrated the Anthropic Claude API via a server-side Deno Edge Function for a human-in-the-loop scheduling copilot, with proposals re-validated by conflict rules and capped by per-school token budgets.',
+        'Added invitation-based onboarding, plan limits with AI usage metering, school-level data export and deletion tooling, and a staging environment with an automated smoke test.',
       ],
       role: 'Full Stack Developer',
-      tech: ['React 18', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Claude API', 'Recharts', 'Vercel'],
+      tech: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Zustand', 'Supabase', 'PostgreSQL', 'Row-Level Security', 'Deno Edge Functions', 'Claude API', 'Vitest', 'GitHub Actions', 'Vercel'],
       category: 'Full Stack',
       date: 'May 2026 – Present',
-      github: '',
+      github: 'https://github.com/vedantpatel1234-sd/CourseSync',
       live: ''
     },
     {

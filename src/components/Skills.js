@@ -9,15 +9,15 @@ const Skills = () => {
     },
     {
       title: 'Frameworks & Libraries',
-      skills: ['React 18', 'Next.js', 'Node.js', 'Tailwind CSS', 'Framer Motion', 'React Native', '.NET', 'Blazor', 'Zustand', 'React Router', 'Recharts']
+      skills: ['React 19', 'Next.js', 'Node.js', 'Tailwind CSS', 'Framer Motion', 'React Native', '.NET', 'Blazor', 'Zustand', 'React Router', 'Recharts', 'Vite']
     },
     {
       title: 'Databases',
-      skills: ['PostgreSQL', 'Oracle SQL / APEX', 'MySQL', 'Supabase', 'SQL Query Optimization']
+      skills: ['PostgreSQL', 'Oracle SQL / APEX', 'MySQL', 'Supabase', 'Row-Level Security', 'SQL Query Optimization']
     },
     {
       title: 'Cloud & DevOps',
-      skills: ['Git', 'GitHub', 'GitHub Actions (CI/CD)', 'Docker', 'Azure', 'Azure Functions', 'Azure SQL', 'Vercel', 'PowerShell']
+      skills: ['Git', 'GitHub', 'GitHub Actions (CI/CD)', 'Docker', 'Azure', 'Azure Functions', 'Azure SQL', 'Deno Edge Functions', 'Vercel', 'PowerShell']
     },
     {
       title: 'APIs & AI',
@@ -25,7 +25,7 @@ const Skills = () => {
     },
     {
       title: 'Tools & Methodology',
-      skills: ['VS Code', 'Figma', 'Jira', 'Power BI', 'Agile/Scrum', 'SDLC', 'OOP', 'Unit & Integration Testing', 'Secure Coding']
+      skills: ['VS Code', 'Figma', 'Jira', 'Power BI', 'Agile/Scrum', 'SDLC', 'OOP', 'Unit & Integration Testing', 'Vitest', 'Secure Coding']
     }
   ];
 
